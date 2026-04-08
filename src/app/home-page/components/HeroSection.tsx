@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-primary-light animate-pulse" />
-             Mypet Artık Google Play'de Çok Yakında App Store'da
+             Mypet Artık Google Play'de App Store'da
             </div>
 
             {/* Headline */}
@@ -93,7 +93,7 @@ const HeroSection: React.FC = () => {
                 
               </a>
               <a
-                href="#"
+                href="https://apps.apple.com/tr/app/mypet-dostunun-asistan%C4%B1/id6753916592?l=tr"
                 className="badge-btn block"
                 aria-label="App Store'dan indir">
                 

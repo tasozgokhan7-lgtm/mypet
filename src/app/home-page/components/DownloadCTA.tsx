@@ -43,7 +43,7 @@ const DownloadCTA: React.FC = () => {
           }>
           
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          MyPet Artık Google Play'de Yayında
+          MyPet Artık Google Play'de ve App Store'da Yayında
         </div>
 
         {/* Headline */}
@@ -62,7 +62,7 @@ const DownloadCTA: React.FC = () => {
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`
           }>
           
-          MyPet artık Google Play'de ve çok yakında ise App Store'da. İlk indirenler arasına katıl.
+          MyPet artık Google Play ve App Store'da. İlk indirenler arasına katıl.
         </p>
 
         {/* Badges */}
@@ -81,7 +81,7 @@ const DownloadCTA: React.FC = () => {
                 className="h-12 w-auto" />
             </div>
           </a>
-          <a href="#app-store-link" target="_blank" rel="noopener noreferrer" className="badge-btn" aria-label="App Store'dan indir">
+          <a href="https://apps.apple.com/tr/app/mypet-dostunun-asistan%C4%B1/id6753916592?l=tr" target="_blank" rel="noopener noreferrer" className="badge-btn" aria-label="App Store'dan indir">
             <div className="bg-white/10 border border-white/20 backdrop-blur-sm rounded-xl p-2">
               <AppImage
                 src="/assets/images/indir-1774533123074.jpg"
@@ -93,7 +93,7 @@ const DownloadCTA: React.FC = () => {
           </a>
         </div>
 
-        {/* QR Code */}
+        {/* QR Code 
         <div
           id="qr-code"
           className={`flex flex-col items-center gap-3 mb-12 transition-all duration-700 delay-350 ${
@@ -111,7 +111,7 @@ const DownloadCTA: React.FC = () => {
 
           </div>
           <p className="text-white/40 text-xs">Android & iOS</p>
-        </div>
+        </div> */}
 
         {/* Stats row */}
         <div
