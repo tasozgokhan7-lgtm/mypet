@@ -29,8 +29,8 @@ const Footer: React.FC = () => {
             <a href="/home-page#contact" className="text-sm font-medium text-muted hover:text-foreground transition-colors min-h-[44px] flex items-center">
               İletişim
             </a>
-            <a href="mailto:info@mypet.com" className="text-sm font-medium text-muted hover:text-foreground transition-colors min-h-[44px] flex items-center">
-              info@mypet.com
+            <a href="mailto:info@appmypet.com" className="text-sm font-medium text-muted hover:text-foreground transition-colors min-h-[44px] flex items-center">
+              info@appmypet.com
             </a>
           </div>
 

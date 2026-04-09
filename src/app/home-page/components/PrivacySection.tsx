@@ -77,7 +77,7 @@ const PrivacySection: React.FC = () => {
       content: (
         <p className="text-muted leading-relaxed">
           Toplanan bilgiler, uygulamayı kullandığınız sürece saklanır. Hesabınızı silmek isterseniz, tüm veriler kalıcı olarak sistemden kaldırılır. Veri silme talebi için:{' '}
-          <a href="mailto:info@mypetapp.com" className="text-primary font-semibold hover:underline">info@mypetapp.com</a>
+          <a href="mailto:info@appmypet.com" className="text-primary font-semibold hover:underline">info@appmypet.com</a>
         </p>
       ),
     },
@@ -122,7 +122,7 @@ const PrivacySection: React.FC = () => {
       content: (
         <p className="text-muted leading-relaxed">
           Sorularınız, önerileriniz veya veri silme talepleriniz için:{' '}
-          <a href="mailto:info@mypetapp.com" className="text-primary font-semibold hover:underline">info@mypetapp.com</a>
+          <a href="mailto:info@appmypet.com" className="text-primary font-semibold hover:underline">info@appmypet.com</a>
         </p>
       ),
     },
