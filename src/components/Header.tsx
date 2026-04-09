@@ -71,11 +71,14 @@ const Header: React.FC = () => {
 
           {/* Desktop CTA */}
         <a
-  href="#download"
+  href="#indir"
   onClick={(e) => {
     e.preventDefault();
-    const el = document.getElementById('download');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById('indir');
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }}
   className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-btn text-sm font-semibold bg-primary text-white hover:bg-primary-dark transition-all duration-200 badge-btn"
 >
@@ -140,11 +143,14 @@ const Header: React.FC = () => {
               </a>
             )}
             <a
-              href="#download"
+              href="#indir"
               onClick={(e) => {
                 e.preventDefault();
-                const el = document.getElementById('download');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                const el = document.getElementById('indir');
+                if (el) {
+                  const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
                 setMenuOpen(false);
               }}
               className="mt-2 mx-4 py-3 rounded-btn text-center text-sm font-semibold bg-primary text-white">

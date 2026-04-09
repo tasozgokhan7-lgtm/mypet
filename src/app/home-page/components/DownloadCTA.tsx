@@ -18,7 +18,7 @@ const DownloadCTA: React.FC = () => {
 
   return (
     <section
-      id="download"
+      id="indir"
       ref={sectionRef}
       className="relative overflow-hidden cta-gradient py-24 noise-overlay">
       
