@@ -71,23 +71,11 @@ const Header: React.FC = () => {
 
           {/* Desktop CTA */}
         <a
-  href="#qr-code"
+  href="#download"
   onClick={(e) => {
     e.preventDefault();
-
-    const el = document.getElementById('qr-code');
-    if (el) {
-      const yOffset = -550; // 🔥 burayı ihtiyacına göre değiştir (örn: -80, -120)
-      const y =
-        el.getBoundingClientRect().top +
-        window.pageYOffset +
-        yOffset;
-
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth',
-      });
-    }
+    const el = document.getElementById('download');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   }}
   className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-btn text-sm font-semibold bg-primary text-white hover:bg-primary-dark transition-all duration-200 badge-btn"
 >
@@ -152,10 +140,10 @@ const Header: React.FC = () => {
               </a>
             )}
             <a
-              href="#qr-code"
+              href="#download"
               onClick={(e) => {
                 e.preventDefault();
-                const el = document.getElementById('qr-code');
+                const el = document.getElementById('download');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
                 setMenuOpen(false);
               }}
