@@ -23,7 +23,10 @@ const Footer: React.FC = () => {
 
           {/* Links */}
           <div className="flex items-center gap-6 flex-wrap justify-center">
-            <a href="/home-page#privacy" className="text-sm font-medium text-muted hover:text-foreground transition-colors min-h-[44px] flex items-center">
+            <a href="/apps" className="text-sm font-medium text-muted hover:text-foreground transition-colors min-h-[44px] flex items-center">
+              Uygulamalarımız
+            </a>
+            <a href="/privacy" className="text-sm font-medium text-muted hover:text-foreground transition-colors min-h-[44px] flex items-center">
               Gizlilik Politikası
             </a>
             <a href="/home-page#contact" className="text-sm font-medium text-muted hover:text-foreground transition-colors min-h-[44px] flex items-center">

@@ -5,7 +5,6 @@ import HeroSection from './components/HeroSection';
 import ScreenshotCarousel from './components/ScreenshotCarousel';
 import FeaturesSection from './components/FeaturesSection';
 import DownloadCTA from './components/DownloadCTA';
-import PrivacySection from './components/PrivacySection';
 import ContactSection from './components/ContactSection';
 
 export default function HomePage() {
@@ -24,9 +23,6 @@ export default function HomePage() {
 
       {/* Download CTA */}
       <DownloadCTA />
-
-      {/* Privacy Policy */}
-      <PrivacySection />
 
       {/* Contact */}
       <ContactSection />

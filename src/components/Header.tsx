@@ -15,9 +15,11 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-  { label: 'Hakkında', href: '#features' },
-  { label: 'Gizlilik Politikası', href: '#privacy' },
-  { label: 'Bize Ulaşın', href: '#contact' }];
+  { label: 'Hakkında', href: '#features', external: false },
+  { label: 'Uygulamalarımız', href: '/apps', external: true },
+  { label: 'Gizlilik Politikası', href: '/privacy', external: true },
+  { label: 'Bize Ulaşın', href: '#contact', external: false },
+];
 
 
   return (
@@ -51,21 +53,31 @@ const Header: React.FC = () => {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) =>
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={(e) => {
-                const id = link.href.replace('#', '');
-                const el = document.getElementById(id);
-                if (el) {
-                  e.preventDefault();
-                  el.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="nav-link text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200">
-              
-                {link.label}
-              </a>
+              link.external ? (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="nav-link text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => {
+                    const id = link.href.replace('#', '');
+                    const el = document.getElementById(id);
+                    if (el) {
+                      e.preventDefault();
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="nav-link text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              )
             )}
           </nav>
 
@@ -125,22 +137,33 @@ const Header: React.FC = () => {
           
           <div className="flex flex-col gap-1 py-4">
             {navLinks.map((link) =>
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={(e) => {
-                const id = link.href.replace('#', '');
-                const el = document.getElementById(id);
-                if (el) {
-                  e.preventDefault();
-                  el.scrollIntoView({ behavior: 'smooth' });
-                }
-                setMenuOpen(false);
-              }}
-              className="px-4 py-3 rounded-lg text-foreground/80 hover:bg-primary/8 hover:text-primary font-medium transition-colors">
-              
-                {link.label}
-              </a>
+              link.external ? (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-3 rounded-lg text-foreground/80 hover:bg-primary/8 hover:text-primary font-medium transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => {
+                    const id = link.href.replace('#', '');
+                    const el = document.getElementById(id);
+                    if (el) {
+                      e.preventDefault();
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setMenuOpen(false);
+                  }}
+                  className="px-4 py-3 rounded-lg text-foreground/80 hover:bg-primary/8 hover:text-primary font-medium transition-colors"
+                >
+                  {link.label}
+                </a>
+              )
             )}
             <a
               href="#indir"
