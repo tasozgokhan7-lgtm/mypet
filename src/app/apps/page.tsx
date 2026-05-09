@@ -1,38 +1,49 @@
 import React from 'react';
+import type { Metadata } from 'next';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Diğer Uygulamalarımız — MyPet',
+  description: 'Baby Moments, Futbolcu Bul - Quiz ve StyleScan dahil tüm mobil uygulamalarımızı keşfedin.',
+};
 
 const apps = [
   {
     name: 'Baby Moments',
     emoji: '👶',
+    logo: null,
     description: 'Açıklama yakında eklenecek.',
     color: '#FFF5F0',
-    border: '#F4A261',
+    accent: '#F4A261',
     tag: 'Aile & Çocuk',
+    googlePlay: null,
+    appStore: null,
   },
   {
     name: 'Futbolcu Bul - Quiz',
-    emoji: '⚽',
-    description: 'Açıklama yakında eklenecek.',
+    emoji: null,
+    logo: '/assets/images/futbolcu-bul-logo.png',
+    description: 'Favori futbolcuları bul, zorlu quizleri çöz! Binlerce futbolcu arasından ipuçlarıyla doğru ismi tahmin et. Futbol bilgini test et ve arkadaşlarınla yarış.',
     color: '#F0FFF4',
-    border: '#2D6A4F',
+    accent: '#2D6A4F',
     tag: 'Spor & Eğlence',
+    googlePlay: null,
+    appStore: 'https://apps.apple.com/tr/app/futbolcu-bul-quiz/id6767035364?l=tr',
   },
   {
     name: 'StyleScan',
     emoji: '👗',
+    logo: null,
     description: 'Açıklama yakında eklenecek.',
     color: '#FDF4FF',
-    border: '#A855F7',
+    accent: '#A855F7',
     tag: 'Moda & Stil',
+    googlePlay: null,
+    appStore: null,
   },
 ];
-
-export const metadata = {
-  title: 'Diğer Uygulamalarımız — MyPet',
-  description: 'Baby Moments, Futbolcu Bul ve StyleScan dahil tüm mobil uygulamalarımızı keşfedin.',
-};
 
 export default function AppsPage() {
   return (
@@ -57,19 +68,28 @@ export default function AppsPage() {
 
       {/* App Cards */}
       <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto grid sm:grid-cols-1 gap-6">
+        <div className="max-w-3xl mx-auto flex flex-col gap-6">
           {apps.map((app) => (
             <div
               key={app.name}
-              className="bg-white rounded-2xl border-2 p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300"
-              style={{ borderColor: app.border + '40' }}
+              className="bg-white rounded-2xl border border-foreground/10 p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               {/* Icon */}
               <div
-                className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0"
+                className="w-20 h-20 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
                 style={{ backgroundColor: app.color }}
               >
-                {app.emoji}
+                {app.logo ? (
+                  <Image
+                    src={app.logo}
+                    alt={`${app.name} logo`}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                ) : (
+                  <span className="text-4xl">{app.emoji}</span>
+                )}
               </div>
 
               {/* Content */}
@@ -80,21 +100,45 @@ export default function AppsPage() {
                   </h2>
                   <span
                     className="text-xs font-semibold px-3 py-1 rounded-full"
-                    style={{ backgroundColor: app.color, color: app.border }}
+                    style={{ backgroundColor: app.color, color: app.accent }}
                   >
                     {app.tag}
                   </span>
                 </div>
-                <p className="text-muted leading-relaxed">{app.description}</p>
+                <p className="text-muted leading-relaxed mb-5">{app.description}</p>
 
-                {/* Badges placeholder */}
-                <div className="flex gap-3 mt-5">
-                  <span className="inline-flex items-center gap-1.5 text-xs text-muted border border-foreground/15 rounded-full px-3 py-1.5">
-                    ▶ Google Play
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-xs text-muted border border-foreground/15 rounded-full px-3 py-1.5">
-                    ⬡ App Store
-                  </span>
+                {/* Store badges */}
+                <div className="flex flex-wrap gap-3">
+                  {app.googlePlay ? (
+                    <a
+                      href={app.googlePlay}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-xl border-2 hover:shadow-sm transition-all duration-200"
+                      style={{ borderColor: app.accent, color: app.accent }}
+                    >
+                      ▶ Google Play
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 text-sm text-muted border border-foreground/15 rounded-xl px-4 py-2">
+                      ▶ Google Play — Yakında
+                    </span>
+                  )}
+                  {app.appStore ? (
+                    <a
+                      href={app.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-xl border-2 hover:shadow-sm transition-all duration-200"
+                      style={{ borderColor: app.accent, color: app.accent }}
+                    >
+                      🍎 App Store
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 text-sm text-muted border border-foreground/15 rounded-xl px-4 py-2">
+                      🍎 App Store — Yakında
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
