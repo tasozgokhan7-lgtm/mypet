@@ -25,7 +25,7 @@ const apps = [
     name: 'Futbolcu Bul - Quiz',
     emoji: null,
     logo: '/assets/images/futbolcu-bul-logo.png',
-    description: 'Favori futbolcuları bul, zorlu quizleri çöz! Binlerce futbolcu arasından ipuçlarıyla doğru ismi tahmin et. Futbol bilgini test et ve arkadaşlarınla yarış.',
+    description: 'Futbolcu ismini görüyorsun, geri kalanını biliyor musun? Uyruğunu, doğum yılını, kariyerinde oynadığı kulüpleri ve kazandığı kupaları tahmin et. Futbol bilgini sına!',
     color: '#F0FFF4',
     accent: '#2D6A4F',
     tag: 'Spor & Eğlence',
