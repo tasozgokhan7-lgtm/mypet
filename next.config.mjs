@@ -24,6 +24,11 @@ const nextConfig = {
         destination: '/home-page',
         permanent: false,
       },
+      {
+        source: '/futbolcu-bul',
+        destination: 'https://apps.apple.com/tr/app/futbolcu-bul-quiz/id6767035364?l=tr',
+        permanent: false,
+      },
     ];
   }
 };
